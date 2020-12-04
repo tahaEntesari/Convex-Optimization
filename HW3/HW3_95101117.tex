@@ -1,0 +1,112 @@
+\documentclass[a4paper]{article}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{float}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage[americanvoltages,fulldiodes,siunitx]{circuitikz}
+\usepackage{wrapfig}
+\usepackage{mathrsfs} % https://www.ctan.org/pkg/mathrsfs
+\newcounter{MyCounter}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\usepackage{subfig}	% ploting figures beside each other
+\pgfplotsset{compat=1.12}
+
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\cfoot{(\space \space \space \space \textbf{\thepage}  \space \space \space)}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+\usepackage{listings}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
+
+
+\begin{document}
+	\lstset{language=Matlab,%
+		%basicstyle=\color{red},
+		breaklines=true,%
+		morekeywords={matlab2tikz},
+		keywordstyle=\color{blue},%
+		morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+		identifierstyle=\color{black},%
+		stringstyle=\color{mylilas},
+		commentstyle=\color{mygreen},%
+		showstringspaces=false,%without this there will be a symbol in the places where there is a space
+		numbers=left,%
+		numberstyle={\tiny \color{black}},% size of the numbers
+		numbersep=9pt, % this defines how far the numbers are from the text
+		emph=[1]{for,end,break},emphstyle=[1]\color{blue}, %some words to emphasise
+		%emph=[2]{word1,word2}, emphstyle=[2]{style},    
+	}
+	
+	
+
+
+
+
+
+	\begin{center}
+	\textbf{
+	\\In the name of God
+		}\\
+	
+	\vspace{2cm}
+	\includegraphics[scale=.35]{logo1.png}\\
+	\vspace{0.5cm}
+	\begin{Large}
+	\textbf{
+	\\Sharif University of Technology
+	\vspace{0.5cm}
+	\\School of Electrical Engineering
+	}
+	\end{Large}
+	\vspace{2cm}
+	\begin{huge}
+	\textbf{
+	\\Convex Optimization
+	\vspace{0.75cm}
+‍
+	\\Homework Nr. 3
+	}
+	\end{huge}
+	\vspace{2cm}
+	\begin{Large}
+	\textbf{
+	\\\textit{Dr}. Babazadeh
+	\vspace{2cm}
+	\\Taha Entesari
+	\vspace{0.75cm}
+	\\95101117
+	}
+	\end{Large}
+	
+\end{center}
+
+\thispagestyle{empty}
+\newpage
+\begin{Large}
+	The Simulation results are provided here. Oddly enough, non of the questions would reach a solution with certainty and are extremely dependent on the choice of random matrices that are generated at first, thus, the code is written in such a way to continue generating random matrices until a case is reached in which an answer is achieved for that problem. After reaching a solution, the said matrices are saved for future uses. 
+	\section*{Problem 5}
+	The CVX code for part a is simple but due to the random generation of matrices that is mentioned above, the result of the executed code would mostly be that the \textit{status} is \textit{infeasible} and the \textit{optimal value} is $ +\infty $. An instance of good matrices is saved and appended and available in the zip file.\\
+	The code for part b is implemented in 2 ways; One is the solution provided by the textbook and the other is the less simplified one that I myself have derived. For the matrix set that is generated in part \textit{a}, both these methods, as expected, result in the same optimal value, and the mentioned optimal value is less than the one in part \textit{a} which suggests that there is a gap between the primal and the original problem. With the mentioned matrix, the result of part \textit{a} would be $ -0.46 $ whereas the optimal value achieved by part \textit{b} is $ -2.36 $.\\
+	The question has asked to generate the matrices for different \textit{n} and compare the consumed \textit{cpu time} but the process of finding matrices that would result in solvable problems is very  time consuming and this process could not be completed.
+	\section*{Problem 6}
+	The dual problem of the relative entropy problem is implemented in this section. The problem in this problem is that almost always the \textit{status} would be \textit{unbounded} and the \textit{optimal value} would be $ +\infty $. Following the same procedure as the previous section, a set of good matrices are saved and are appended and available in the zip file. For the mentioned set of matrices the optimal value is $ -0.97442 $.
+
+
+\end{Large}
+\end{document}
+
